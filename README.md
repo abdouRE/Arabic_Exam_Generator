@@ -25,7 +25,7 @@ An AI-powered tool to generate Arabic language exams with customizable content, 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/abdouRE/arabic-exam-generator.git
+git clone https://github.com/abdouRE/Arabic_Exam_Generator.git
 cd arabic-exam-generator
 ```
 
