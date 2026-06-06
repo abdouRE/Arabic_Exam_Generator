@@ -1,0 +1,11 @@
+name: testbuilder
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pillow
+  - python-docx
+  - pyside6
+  - pip
+  - pip:
+      - google-genai

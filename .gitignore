@@ -1,0 +1,16 @@
+# Environment variables
+.env
+.env.*
+
+# Python cache
+__pycache__/
+
+# Generated files
+arabic_exam.docx
+generated_arabic_exam_*.txt
+updated_arabic_exam.txt
+
+# Exam examples (users must provide their own)
+EXAMS/**/*.png
+EXAMS/**/*.jpg
+EXAMS/**/*.jpeg
