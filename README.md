@@ -16,7 +16,6 @@ An AI-powered tool to generate Arabic language exams with customizable content, 
 ## Prerequisites
 
 - Python 3.11+
-- Conda or virtual environment manager
 - Google Gemini API key (free tier available at [Google AI Studio](https://aistudio.google.com/app/apikey))
 - Exam example images in PNG/JPG format (you provide these)
 
@@ -29,14 +28,29 @@ git clone https://github.com/abdouRE/Arabic_Exam_Generator.git
 cd arabic-exam-generator
 ```
 
-### 2. Create Conda Environment
+### 2. Create a Virtual Environment
 
 ```bash
-conda env create -f environment.yml
-conda activate testbuilder
+python -m venv venv
 ```
 
-### 3. Add Your Gemini API Key
+Activate it:
+
+```bash
+# Windows
+venv\Scripts\activate
+
+# Linux/Mac
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Add Your Gemini API Key
 
 Create a local `.env` file in the project root and add your key:
 
@@ -46,7 +60,7 @@ GEMINI_API_KEY=your_actual_api_key_here
 
 The app reads `.env` automatically at startup, and the file is ignored by git.
 
-### 4. Create Exam Folder Structure
+### 5. Create Exam Folder Structure
 
 ```
 EXAMS/
@@ -76,7 +90,7 @@ EXAMS/
 └── 5ap-3-exam2/
 ```
 
-### 5. Add Example Exam Images
+### 6. Add Example Exam Images
 
 Place your own exam PDF screenshots (PNG/JPG) inside each folder. The AI uses **two example exams per grade/semester** as few-shot references:
 
@@ -95,7 +109,12 @@ You can place multiple image files per folder if your example exam spans several
 ### Option 1: GUI (Recommended)
 
 ```bash
-conda activate testbuilder
+# Windows
+venv\Scripts\activate
+
+# Linux/Mac
+source venv/bin/activate
+
 python gui.py
 ```
 
@@ -110,19 +129,16 @@ python gui.py
 ### Option 2: Terminal
 
 ```bash
-conda activate testbuilder
+# Windows
+venv\Scripts\activate
+
+# Linux/Mac
+source venv/bin/activate
+
 python test.py
 ```
 
 Follow the interactive prompts to generate and customize your exam.
-
-If you prefer not to activate the environment manually each time:
-
-```bash
-conda run -n testbuilder python gui.py
-```
-
-Note: `conda run -n testbuilder python test.py` will not work reliably for the interactive terminal chatbot because it needs a real terminal stdin for `input()`.
 
 ## Example Exam Output
 
@@ -165,10 +181,9 @@ You can interactively edit specific questions using the UI:
 
 ```
 arabic-exam-generator/
-├── environment.yml                  # Conda environment & dependencies
+├── requirements.txt                 # Python dependencies
 ├── gui.py                           # PySide6 GUI interface
 ├── test.py                          # Core exam generation logic / CLI chatbot
-├── README.md                        # This file
 ├── .gitignore                       # Git ignore rules
 ├── EXAMS/                           # Example exam folders provided by the user
 │   ├── 2ap-1-exam1/
@@ -203,13 +218,12 @@ arabic-exam-generator/
 
 ## Requirements
 
-- python 3.11
+- Python 3.11+
 - pillow (image processing)
 - python-docx (Word document generation)
 - pyside6 (GUI framework)
 - google-genai (Gemini API client)
-
-See `environment.yml` for the full dependency list.
+- python-dotenv (loads API key from .env file)
 
 ---
 

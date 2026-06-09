@@ -5,13 +5,17 @@
 # Python cache
 __pycache__/
 
+# Virtual environment
+venv/
+
 # Generated files
 arabic_exam.docx
 generated_arabic_exam_*.txt
 updated_arabic_exam.txt
 
-# Ignore all .txt files everywhere
+# Ignore all .txt files everywhere except requirements.txt
 *.txt
+!requirements.txt
 
 # Ignore all .docx files everywhere
 *.docx

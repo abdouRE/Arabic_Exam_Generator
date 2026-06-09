@@ -1,0 +1,5 @@
+google-genai
+python-docx
+pillow
+pyside6
+python-dotenv
